@@ -1,0 +1,58 @@
+{
+  "mcpServers": {
+    "benjamin-franklin-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "FRANKLIN",
+        "TARGET_CHAIN": "Sui",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "verify_electric_charge_conservation",
+          "description": "Demonstrates algebraic sum of positive and negative charges remains constant during electrostatic transfer",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "positive_coulombs": {
+                "type": "number"
+              },
+              "negative_coulombs": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "positive_coulombs",
+              "negative_coulombs"
+            ]
+          }
+        },
+        {
+          "name": "calculate_lightning_rod_point_discharge",
+          "description": "Computes electrostatic field gradient at grounded metallic point dissipating cloud potential",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "cloud_potential_kv": {
+                "type": "number"
+              },
+              "rod_height_m": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "cloud_potential_kv"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
